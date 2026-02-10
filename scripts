@@ -1,0 +1,8 @@
+# Don't copy files on the login node: instead, use a SLURM job with the following script:
+$copy_large_files.sh
+cp [path_to_file] [path_to_destination]
+
+# To convert .vcf to .bim, .bed, and .fam:
+$plink2_bim_bed_fam.sh
+plink2 --vcf [absolute_path_to_file] --make-bed --out [absolute_path_to_destination_directory] # don't define the file extension (don't put .vcf.bgz or something similar), just include the filename
+
