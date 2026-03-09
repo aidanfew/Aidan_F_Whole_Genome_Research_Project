@@ -1,11 +1,11 @@
 nextflow.enable.dsl=2
 
-// --- Parameters ---
+// --- parameters ---
 params.vcf = '/home/aidanfew/groups/grp_ADVariance/nobackup/autodelete/file_10254-42298062.vcf.bgz'
 params.pheno = '/home/aidanfew/groups/grp_ADVariance/nobackup/autodelete/your_alzheimers_traits.phen'
 params.outdir = '/home/aidanfew/groups/grp_ADVariance/nobackup/autodelete/pipeline_results'
 
-// --- SLURM Defaults for all jobs ---
+// --- SLURM defaults for all jobs ---
 process {
     executor = 'slurm'
     cpus = 8            
@@ -14,7 +14,7 @@ process {
     clusterOptions = '--mail-user=aidanfew@byu.edu --mail-type=FAIL' 
 }
 
-// --- Pipeline Steps ---
+// --- pipeline Steps ---
 process MAKE_BIM_BED_FAM {
     publishDir "${params.outdir}/bim_bed_fam_files", mode: 'copy'
 
